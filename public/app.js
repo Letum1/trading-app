@@ -1,6 +1,18 @@
 let currentUser = null;
 let users = {};
-let) {let stocks = { "Stock A": 100, "Stock B": 150 };
+let stocks = { "Stock A": 100, "Stock B": 150 };
+
+function updateUI() {
+  document.getElementById("balance").textContent = users[currentUser].balance;
+  const stockSelect = document.getElementById("stock-select");
+  const sellSelect = document.getElementById("sell-select");
+  const inventoryList = document.getElementById("inventory");
+
+  stockSelect.innerHTML = "";
+  sellSelect.innerHTML = "";
+  inventoryList.innerHTML = "";
+
+  for (let stock in stocks) {
     const option = document.createElement("option");
     option.value = stock;
     option.textContent = `${stock} - ${stocks[stock]} credits`;
@@ -80,14 +92,3 @@ function banUser() {
     alert("User not found.");
   }
 }
-
-function updateUI() {
-  document.getElementById("balance").textContent = users[currentUser].balance;
-  const stockSelect = document.getElementById("stock-select");
-  const sellSelect = document.getElementById("sell-select");
-  const inventoryList = document.getElementById("inventory");
-
-  stockSelect.innerHTML = "";
-  sellSelect.innerHTML = "";
-  inventoryList.innerHTML = "";
-
