@@ -1,51 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Trading App</title>
-  style.css
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Simulator Platform</title>
+    styles.css
 </head>
 <body>
-  <h1>Trading Platform</h1>
+    <header>
+        <h1>Trading Simulator Platform</h1>
+        <nav>
+            <ul>
+                <li>#Home</a></li>
+                <li>#loginLogin</a></li>
+                <li>#registerRegister</a></li>
+                <li>#Admin</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Login Section -->
-  <div id="login-section">
-    <h2>Login / Sign Up</h2>
-    <input type="text" id="username" placeholder="Username">
-    <select id="role">
-      <option value="user">User</option>
-      <option value="admin">Admin</option>
-    </select>
-    <button>
-  </div>
+    <main>
+        <section id="login">
+            <h2>Login</h2>
+            <form>
+                <input type="text" placeholder="Username" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <button type="submit">Login</button>
+            </form>
+        id="register">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" placeholder="Username" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <label>Solve: <span id="math-question"></span></label><br>
+                <input type="text" id="math-answer" required><br>
+                <button type="submit">Register</button>
+            </form>
+        </section>
 
-  <!-- User Dashboard -->
-  <div id="user-section" style="display:none;">
-    <h2>User Dashboard</h2>
-    <p>Balance: <span id="balance">0</span> credits</p>
-    <h3>Buy Stock</h3>
-    <select id="stock-select"></select>
-    <button onclick="buyStock()">Buy</button>
+        <section id="community">
+            <h2>Create Community</h2>
+            <form>
+                <input type="text" placeholder="Community Name" required><br>
+                <textarea placeholder="Description"></textarea><br>
+                <input type="text" placeholder="Coin Name"><br>
+                <input type="text" placeholder="Asset Name"><br>
+                <button type="submit">Create</button>
+            </form>
+        </section>
 
-    <h3>Sell Stock</h3>
-    <select id="sell-select"></select>
-    <button onclick="sellStock()">Sell</button>
+        <section id="browse">
+            <h2>Browse Communities</h2>
+            <div id="community-list"></div>
+        </section>
 
-    <h3>Your Inventory</h3>
-    <ul id="inventory"></ul>
-  </div>
+        <section id="admin" style="display:none;">
+            <h2>Mega Admin Dashboard</h2>
+            <p>Welcome, Mega Admin!</p>
+            <button>Verify Community</button>
+            <button>Ban User</button>
+            <button>Delete Listing</button>
+        </section>
 
-  <!-- Admin Panel -->
-  <div id="admin-section" style="display:none;">
-    <h2>Admin Panel</h2>
-    <input type="text" id="new-stock-name" placeholder="Stock name">
-    <input type="number" id="new-stock-price" placeholder="Price">
-    <button onclick="createStock()">Create Stock</button>
+        <section id="admin-access">
+            <h2>Admin Access</h2>
+            <input type="password" id="admin-key" placeholder="Enter Admin Key">
+            <button onclick="checkAdminKey()">Enter</button>
+        </section>
+    </main>
 
-    <input type="text" id="ban-user" placeholder="User to ban">
-    <button onclick="banUser()">Ban User</button>
-  </div>
-
-  app.js</script>
+    public/app.js</script>
 </body>
 </html>
-
