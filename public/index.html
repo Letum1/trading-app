@@ -1,74 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Simulator Platform</title>
-    styles.css
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Simu.lator</title>
+  <link href="jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css
+  style.css
 </head>
-<body>
-    <header>
-        <h1>Trading Simulator Platform</h1>
-        <nav>
-            <ul>
-                <li>#Home</a></li>
-                <li>#loginLogin</a></li>
-                <li>#registerRegister</a></li>
-                <li>#Admin</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gray-100 text-gray-900 font-sans">
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+      <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">🌐 Financial Simulator</h2>
 
-    <main>
-        <section id="login">
-            <h2>Login</h2>
-            <form>
-                <input type="text" placeholder="Username" required><br>
-                <input type="password" placeholder="Password" required><br>
-                <button type="submit">Login</button>
-            </form>
-        id="register">
-            <h2>Register</h2>
-            <form id="register-form">
-                <input type="text" placeholder="Username" required><br>
-                <input type="password" placeholder="Password" required><br>
-                <label>Solve: <span id="math-question"></span></label><br>
-                <input type="text" id="math-answer" required><br>
-                <button type="submit">Register</button>
-            </form>
-        </section>
+      <div id="form-toggle" class="flex justify-center mb-4">
+        <button id="show-login" class="text-blue-600 font-semibold mr-4">Login</button>
+        <button id="show-register" class="text-gray-600 hover:text-blue-600">Register</button>
+      </div>
 
-        <section id="community">
-            <h2>Create Community</h2>
-            <form>
-                <input type="text" placeholder="Community Name" required><br>
-                <textarea placeholder="Description"></textarea><br>
-                <input type="text" placeholder="Coin Name"><br>
-                <input type="text" placeholder="Asset Name"><br>
-                <button type="submit">Create</button>
-            </form>
-        </section>
+      <!-- Login Form -->
+      <form id="login-form" class="space-y-4">
+        <input type="text" placeholder="Username" class="w-full px-4 py-2 border rounded" required />
+        <input type="password" placeholder="Password" class="w-full px-4 py-2 border rounded" required />
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Login</button>
+      </form>
 
-        <section id="browse">
-            <h2>Browse Communities</h2>
-            <div id="community-list"></div>
-        </section>
+      <!-- Register Form -->
+      <form id="register-form" class="space-y-4 hidden">
+        <input type="text" placeholder="Username" class="w-full px-4 py-2 border rounded" required />
+        <input type="email" placeholder="Email" class="w-full px-4 py-2 border rounded" required />
+        <input type="password" placeholder="Password" class="w-full px-4 py-2 border rounded" required />
+        <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Register</button>
+      </form>
+    </div>
+  </div>
 
-        <section id="admin" style="display:none;">
-            <h2>Mega Admin Dashboard</h2>
-            <p>Welcome, Mega Admin!</p>
-            <button>Verify Community</button>
-            <button>Ban User</button>
-            <button>Delete Listing</button>
-        </section>
-
-        <section id="admin-access">
-            <h2>Admin Access</h2>
-            <input type="password" id="admin-key" placeholder="Enter Admin Key">
-            <button onclick="checkAdminKey()">Enter</button>
-        </section>
-    </main>
-
-    public/app.js</script>
+  app.js</script>
 </body>
 </html>
