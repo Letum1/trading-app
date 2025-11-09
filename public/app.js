@@ -1,40 +1,30 @@
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('App loaded');
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
+  const registerForm = document.getElementById("register-form");
+  const showLogin = document.getElementById("show-login");
+  const showRegister = document.getElementById("show-register");
 
-    // Anti-bot math question
-    const num1 = Math.floor(Math.random() * 10);
-    const num2 = Math.floor(Math.random() * 10);
-    document.getElementById('math-question').textContent = `${num1} + ${num2}`;
+  showLogin.addEventListener("click", () => {
+    loginForm.classList.remove("hidden");
+    registerForm.classList.add("hidden");
+    showLogin.classList.add("text-blue-600");
+    showRegister.classList.remove("text-blue-600");
+  });
 
-    document.getElementById('register-form').addEventListener('submit', function(e) {
-        const answer = parseInt(document.getElementById('math-answer').value);
-        if (answer !== num1 + num2) {
-            e.preventDefault();
-            alert('Incorrect math answer. Please try again.');
-        }
-    });
+  showRegister.addEventListener("click", () => {
+    loginForm.classList.add("hidden");
+    registerForm.classList.remove("hidden");
+    showLogin.classList.remove("text-blue-600");
+    showRegister.classList.add("text-blue-600");
+  });
 
-    // Admin key check
-    window.checkAdminKey = function() {
-        const key = document.getElementById('admin-key').value;
-        if (key === 'mega123') {
-            document.getElementById('admin').style.display = 'block';
-        } else {
-            alert('Incorrect admin key');
-        }
-    };
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Logging in... (simulate backend call)");
+  });
 
-    // Sample community list
-    const communities = [
-        { name: "Wolf Traders", description: "Trade Wolf Coins and ghost stocks." },
-        { name: "GT Growtopia", description: "Simulate Growtopia item trading." },
-        { name: "Crypto Sim", description: "Speculate with imaginary crypto assets." }
-    ];
-
-    const listContainer = document.getElementById('community-list');
-    communities.forEach(c => {
-        const div = document.createElement('div');
-        div.innerHTML = `<strong>${c.name}</strong><p>${c.description}</p>`;
-        listContainer.appendChild(div);
-    });
+  registerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Registering user... (simulate backend call)");
+  });
 });
