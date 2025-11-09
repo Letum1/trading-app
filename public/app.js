@@ -21,10 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     alert("Logging in... (simulate backend call)");
+    window.location.href = "dashboard.html"; // Simulate redirect
   });
 
   registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     alert("Registering user... (simulate backend call)");
+    window.location.href = "dashboard.html"; // Simulate redirect
   });
 });
